@@ -6,5 +6,8 @@ def pocet_sudych(n):
         pocet_sudych(10) -> 5  (2, 4, 6, 8, 10)
         pocet_sudych(1) -> 0
     """
-    # TODO: doplň řešení
-    raise NotImplementedError
+    pocet = 0
+    for cislo in range(1, n + 1):
+        if cislo % 2 == 0:
+            pocet += 1
+    return pocet
