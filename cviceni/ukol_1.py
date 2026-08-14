@@ -9,6 +9,9 @@ def soucet_do_n(n):
         soucet_do_n(1) -> 1
         soucet_do_n(0) -> 0
     """
+    if not isinstance(n, int) or isinstance(n, bool):
+        raise TypeError("n musí být celé číslo (int)")
+
     soucet = 0
     for cislo in range(1, n + 1):
         soucet += cislo
