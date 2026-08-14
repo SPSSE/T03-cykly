@@ -60,11 +60,11 @@ Poznámky pro učitele k vedení hodiny u jednotlivých cvičení. Bez časovéh
 
 Doplň funkce v souborech ve složce `cviceni/`:
 
-- **`ukol_1.py` - `soucet_do_n(n)`**: Vrať součet všech celých čísel od 1 do `n` (včetně). Pro `n < 1` vrať `0`.
+- **`ukol_1.py` - `soucet_do_n(n)`**: Vrať součet všech celých čísel od 1 do `n` (včetně). Pro `n < 1` vrať `0`. Pokud `n` není celé číslo (`int`), vyhoď `TypeError`.
   - Příklad: `soucet_do_n(5)` -> `15`
-- **`ukol_2.py` - `pocet_sudych(n)`**: Vrať počet sudých čísel v rozsahu od 1 do `n` (včetně).
+- **`ukol_2.py` - `pocet_sudych(n)`**: Vrať počet sudých čísel v rozsahu od 1 do `n` (včetně). Pokud `n` není celé číslo (`int`), vyhoď `TypeError`.
   - Příklad: `pocet_sudych(10)` -> `5`
-- **`ukol_3.py` - `faktorial(n)`**: Vrať faktoriál čísla `n` pomocí cyklu (`faktorial(0)` je `1`).
+- **`ukol_3.py` - `faktorial(n)`**: Vrať faktoriál čísla `n` pomocí cyklu (`faktorial(0)` je `1`). Pokud je `n` záporné, vyhoď `ValueError`.
   - Příklad: `faktorial(5)` -> `120`
 
 ## Jak si to sám zkontrolovat
@@ -73,6 +73,13 @@ pip install -r requirements.txt
 pytest cviceni -v
 ```
 Po nahrání na GitHub navíc automaticky poběží testy přes GitHub Actions – uvidíš zelenou/červenou fajfku u commitu.
+
+## Hodnocení
+
+Hodnocení probíhá automaticky přes GitHub Classroom:
+
+- **Základní testy** (`test_ukol_1.py`, `test_ukol_2.py`, `test_ukol_3.py`) se spustí automaticky při každém pushi do `main` a výsledek uvidíš ihned v záložce Actions / na commitu.
+- **Na jedničku** je navíc potřeba projít přísnějšími **stress testy** postavenými na knihovně [Hypothesis](https://hypothesis.readthedocs.io/), které ověřují řešení na tisících náhodných a hraničních vstupů. Tyto testy se zpřístupní až po zveřejnění oficiálního řešení vyučujícím (branch `reseni`) a poté se automaticky zahrnou do hodnocení.
 
 ## Odevzdání
 Vyplň soubory v `cviceni/`, commitni a pushni do svého repozitáře do stanoveného termínu. Řešení (branch `reseni`) zveřejní vyučující až po deadline.
